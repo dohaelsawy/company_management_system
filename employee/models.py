@@ -12,8 +12,10 @@ class Employee(models.Model):
     mobile = models.CharField(max_length=11)
     address = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
-    hired_on = models.DateTimeField()
+    hired_on = models.DateTimeField(null=True)
     @property
     def days_hired(self):
-        return (now().date() - self.hired_on).days
+        if self.hired_on:
+            return (now().date() - self.hired_on).days
+        return None
 
