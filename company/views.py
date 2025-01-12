@@ -21,16 +21,4 @@ class CompanyViewSet(viewsets.ModelViewSet):
 
         return super().get_permissions()
         
-            
-
-    # def retrieve(self, request, pk=None):
-    #     try:
-    #         user = get_object_or_404(Company, pk=pk)
-    #         serializer = CompanySerializer(user)
-    #         return Response(serializer.data)
-    #     except Http404:
-    #         return Response(
-    #             {'error': "The requested Company does not exist."}, 
-    #             status=status.HTTP_400_BAD_REQUEST
-    #         )
 
