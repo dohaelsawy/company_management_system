@@ -9,11 +9,11 @@ class Department(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.pk:
-            self.company_id.num_departments += 1
-            self.company_id.save()
+            self.company.num_departments += 1
+            self.company.save()
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
-        self.company_id.num_departments -= 1
-        self.company_id.save()
+        self.company.num_departments -= 1
+        self.company.save()
         super().delete(*args, **kwargs)

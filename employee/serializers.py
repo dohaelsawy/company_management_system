@@ -5,8 +5,8 @@ from .models import Employee
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
-        fields = ['id', 'name', 'mobile', 'address', 'title', 'hired_on', 'days_hired', 'company_id', 'department_id', 'user_id']
-        read_only_fields = ['title', 'hired_on', 'days_employed', 'company_id', 'department_id', 'user_id'] 
+        fields = ['id', 'name', 'mobile', 'address', 'title', 'hired_on', 'days_hired', 'company', 'department', 'user']
+        read_only_fields = ['title', 'hired_on', 'days_employed', 'company', 'department', 'user'] 
 
     def validate_mobile(self, value):
         if len(value) != 11:

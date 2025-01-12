@@ -18,4 +18,21 @@ class Employee(models.Model):
         if self.hired_on:
             return (now() - self.hired_on).days
         return None
+    
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.company.num_departments += 1
+            self.company.save()
+
+            self.department.num_employees += 1
+            self.department.save()
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.company.num_departments -= 1
+        self.company.save()
+
+        self.department.num_employees -= 1
+        self.department.save()
+        super().delete(*args, **kwargs)
 
