@@ -12,3 +12,22 @@ class Project(models.Model):
     start_date = models.DateTimeField()
     end_date = models.DateTimeField()
     assigned_employees = models.ManyToManyField(Employee)
+
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            self.company.num_projects += 1
+            self.company.save()
+
+            self.department.num_projects += 1
+            self.department.save()
+        super().save(*args, **kwargs)
+
+    def delete(self, *args, **kwargs):
+        self.company.num_projects -= 1
+        self.company.save()
+
+        self.department.num_projects -= 1
+        self.department.save()
+        super().delete(*args, **kwargs)
+
+

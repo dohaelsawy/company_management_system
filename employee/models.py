@@ -21,7 +21,7 @@ class Employee(models.Model):
     
     def save(self, *args, **kwargs):
         if not self.pk:
-            self.company.num_departments += 1
+            self.company.num_employees += 1
             self.company.save()
 
             self.department.num_employees += 1
@@ -29,7 +29,7 @@ class Employee(models.Model):
         super().save(*args, **kwargs)
 
     def delete(self, *args, **kwargs):
-        self.company.num_departments -= 1
+        self.company.num_employees -= 1
         self.company.save()
 
         self.department.num_employees -= 1
