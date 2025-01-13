@@ -55,6 +55,6 @@ docker-compose up
 ## tests
 - run tests using `make test`
 ## future work
-- [] swagger
-- [] logging
-- [] emojy in readme file
+- [ ] swagger
+- [ ] logging
+- [ ] emojy in readme file
