@@ -12,11 +12,11 @@ class EmployeeViewSetTests(TestCase):
 
     def setUp(self):
 
-        self.admin_user = User.objects.create_user(username='admin', email='admin@example.com', password='adminpass', role='admin')
+        self.admin_user = User.objects.create_user(username='admin', email='admin@example.com', role='admin')
         
-        self.manager_user = User.objects.create_user(username='manager', email='manager@example.com', password='managerpass', role='manager')
+        self.manager_user = User.objects.create_user(username='manager', email='manager@example.com', role='manager')
         
-        self.employee_user = User.objects.create_user(username='employee', email='employee@example.com', password='employeepass', role='employee')
+        self.employee_user = User.objects.create_user(username='employee', email='employee@example.com', role='employee')
         
         self.company = Company.objects.create(name='Test Company', num_employees=0)
         

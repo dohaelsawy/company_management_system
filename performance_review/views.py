@@ -10,16 +10,7 @@ from utils.permissions import IsAdmin, IsManager
 class PerformanceReviewViewSet(viewsets.ModelViewSet):
     queryset = PerformanceReview.objects.all()
     serializer_class = PerformanceReviewSerializer
-    permission_classes = []
-
-    def get_permissions(self):
-
-        if self.action in ["retrieve", "list"]:
-            self.permission_classes = [IsAdmin | IsManager]
-        else :
-            self.permission_classes = [IsAdmin]
-
-        return super().get_permissions()
+    permission_classes = [IsAdmin | IsManager]
 
     @action(detail=True, methods=['post'])
     def schedule_review(self, request, pk=None):
