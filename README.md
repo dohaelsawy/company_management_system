@@ -50,4 +50,7 @@ DB_PORT=5432
 ```
 docker-compose up
 ```
-- congrats it's working, navigate to the following path `http://0.0.0.0:8000/user/login/` 
+- congrats it's working, navigate to the following path `http://0.0.0.0:8000/user/login/`
+
+## tests
+- run tests using `make test`
