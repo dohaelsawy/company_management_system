@@ -18,6 +18,7 @@ encompasses various features for managing companies, departments, employees, and
 - 1. Workflow: Employee Performance Review Cycle
        - only **managers and admins** can change the stage of review
        - only **managers and admins** can provide feadback
+       - only employee can view his own feadbacks
 - 2. APIs
      - Company -> any user can retrieve and list all comanies exist, only admin can create, update and delete a company's data
      - Department -> any user can retrieve and list all departments exist, only admin can create, update and delete a department's data
