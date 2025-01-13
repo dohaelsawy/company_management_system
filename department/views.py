@@ -1,10 +1,7 @@
-from rest_framework import viewsets, status
+from rest_framework import viewsets
 from .models import Department
 from .serializers import DepartmentSerializer
 from utils.permissions import IsAdmin, IsManager, IsEmployee
-from rest_framework.response import Response
-from rest_framework import serializers
-
 
 
 class DepartmentViewSet(viewsets.ModelViewSet):
