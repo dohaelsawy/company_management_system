@@ -10,5 +10,5 @@ role_choice = {
 class User(AbstractUser):
     username = models.CharField(max_length=50, unique=True)
     email = models.EmailField(unique=True)
-    role = models.CharField(choices = role_choice, default='employee')
+    role = models.CharField(choices = role_choice)
     

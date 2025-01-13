@@ -13,6 +13,12 @@ class Employee(models.Model):
     address = models.CharField(max_length=100)
     title = models.CharField(max_length=100)
     hired_on = models.DateTimeField(null=True)
+    performance_reviews = models.ManyToManyField(
+        'performance_review.PerformanceReview',
+        related_name='employee_performance_reviews',
+        related_query_name='employee_performance_review',
+        blank=True
+    )   
     @property
     def days_hired(self):
         if self.hired_on:

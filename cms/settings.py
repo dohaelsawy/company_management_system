@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'department',
     'employee',
     'user',
+    'performance_review',
 ]
 
 MIDDLEWARE = [
