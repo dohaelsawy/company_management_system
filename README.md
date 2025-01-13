@@ -2,14 +2,14 @@
 encompasses various features for managing companies, departments, employees, and projects.
 
 ## Fearures 
-- Secure authentication and role-based access control with roles (Admin, Manager, Employee).
-- CRUD operations for *companies*, including automatic calculation of department, employee, and project counts.
-- CRUD operations for *departments* linked to specific companies.
-- CRUD operations for *employees* with details such as name, department, contact information, and job title.
-- CRUD operations for *projects* linked to specific companies and departments.
-- Structured review process with stages and allowed transitions:
+- [x] Secure authentication and role-based access control with roles (Admin, Manager, Employee).
+- [x] CRUD operations for *companies*, including automatic calculation of department, employee, and project counts.
+- [x] CRUD operations for *departments* linked to specific companies.
+- [x] CRUD operations for *employees* with details such as name, department, contact information, and job title.
+- [x] CRUD operations for *projects* linked to specific companies and departments.
+- [x] Structured review process with stages and allowed transitions:
   -  Pending Review, Review Scheduled, Feedback Provided, Under Approval, Review Approved, and Review Rejected.
-- Unit and integration tests to validate functionality.
+- [x] Unit and integration tests to validate functionality.
 
 ## Data Models: 
 - ![schema](schema.png)
